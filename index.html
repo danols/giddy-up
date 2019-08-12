@@ -1,0 +1,312 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        background-color: #691197;
+        padding: 0;
+        margin: 0;
+      }
+
+      .main-container {
+        background-color: #691197;
+        width: 100%;
+        height: 100%;
+      }
+
+      .circles-character {
+        position: absolute;
+        background-image: url('./page_01.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        left: 100px;
+        top: 100px;
+        width: 200px;
+        height: 200px;
+        z-index: 10;
+      }
+
+      .top-character {
+        position: absolute;
+        background-image: url('./page_01.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        left: 400px;
+        top: 40px;
+        width: 340px;
+        height: 350px;
+        z-index: 10;
+      }
+
+      .bottom-character {
+        position: absolute;
+        background-image: url('./page_03.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        left: 200px;
+        top: 795px;
+        width: 320px;
+        height: 360px;
+        z-index: 10;
+      }
+
+      .corner-character {
+        position: absolute;
+        background-image: url('./page_08.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        left: 865px;
+        top: 280px;
+        width: 330px;
+        height: 250px;
+        z-index: 10;
+      }
+
+      .bottom-right-character {
+        position: absolute;
+        background-image: url('./page_13.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        right: 450px;
+        top: 760px;
+        width: 285px;
+        height: 370px;
+        z-index: 11;
+      }
+
+      .middle-right-character {
+        position: absolute;
+        background-image: url('./page_18.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        right: 200px;
+        top: 400px;
+        width: 260px;
+        height: 305px;
+        z-index: 11;
+      }
+
+      .top-circles {
+        position: absolute;
+        background-image: url('./page_04.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        left: 100px;
+        top: 50px;
+        width: 250px;
+        height: 260px;
+        z-index: 10;
+      }
+
+      .right-circles {
+        position: absolute;
+        background-image: url('./page_05.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        right: 0px;
+        top: 400px;
+        width: 580px;
+        height: 720px;
+        z-index: 10;
+      }
+
+      .top-ten {
+        position: absolute;
+        background-image: url('./page_06.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        right: 100px;
+        top: 50px;
+        width: 400px;
+        height: 290px;
+        z-index: 10;
+      }
+
+      #pricing-table {
+        position: absolute;
+        left: 150px;
+        top: 315px;
+        text-align: center;
+      }
+
+      #pricing-table .plan {
+        font: 25px 'Lucida Sans', 'trebuchet MS', Arial, Helvetica;
+        font-weight: bold;
+        text-shadow: 0 1px rgba(255,255,255,.8);        
+        background: #fff;      
+        border: 1px solid #ddd;
+        color: #691197;
+        padding: 20px;
+        width: 225px;
+        float: left;
+        position: relative;
+        border-radius: 0 5px 5px 0;
+      }
+
+      #pricing-table #most-popular {
+        z-index: 2;
+        top: -35px;
+        border-width: 3px;
+        padding: 30px 20px;
+        height: 500px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        -moz-box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);
+        -webkit-box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);
+        box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);    
+        height: 550px;
+      }
+
+      #pricing-table .plan:nth-child(1) {
+        -moz-border-radius: 5px 0 0 5px;
+        -webkit-border-radius: 5px 0 0 5px;
+        border-radius: 5px 0 0 5px;
+        height: 450px;   
+      }
+
+      #pricing-table .plan:nth-child(3) {
+        -moz-border-radius: 5px 0 0 5px;
+        -webkit-border-radius: 5px 0 0 5px;
+        border-radius: 5px 0 0 5px;
+        height: 450px;   
+      }
+
+      #pricing-table h3 {
+        font-size: 45px;
+        font-weight: bold;
+        color: #691197;
+        padding: 20px;
+        margin: -20px -20px 10px -20px;
+        margin-top: 10px;
+        background-color: #eee;
+        background-image: -moz-linear-gradient(#fff,#eee);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));    
+        background-image: -webkit-linear-gradient(#fff, #eee);
+        background-image: -o-linear-gradient(#fff, #eee);
+        background-image: -ms-linear-gradient(#fff, #eee);
+        background-image: linear-gradient(#fff, #eee);
+      }
+
+      #pricing-table #most-popular h3 {
+        background-color: #ddd;
+        background-image: -moz-linear-gradient(#eee,#ddd);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#ddd));    
+        background-image: -webkit-linear-gradient(#eee, #ddd);
+        background-image: -o-linear-gradient(#eee, #ddd);
+        background-image: -ms-linear-gradient(#eee, #ddd);
+        background-image: linear-gradient(#eee, #ddd);
+        margin-top: -30px;
+        padding-top: 30px;
+        -moz-border-radius: 5px 5px 0 0;
+        -webkit-border-radius: 5px 5px 0 0;
+        border-radius: 5px 5px 0 0; 		
+      }
+
+      #pricing-table h3 span {
+        display: block;
+        font: bold 25px/100px Georgia, Serif;
+        color: #777;
+        background: #fff;
+        border: 5px solid #fff;
+        height: 100px;
+        width: 100px;
+        margin: 10px auto -65px;
+        -moz-border-radius: 100px;
+        -webkit-border-radius: 100px;
+        border-radius: 100px;
+        -moz-box-shadow: 0 5px 20px #ddd inset, 0 3px 0 #999 inset;
+        -webkit-box-shadow: 0 5px 20px #ddd inset, 0 3px 0 #999 inset;
+        box-shadow: 0 5px 20px #ddd inset, 0 3px 0 #999 inset;
+      }
+
+      #pricing-table ul {
+        margin: 20px 0 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      #pricing-table li {
+        border-top: 1px solid #fff;
+        padding: 5px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container" id="main-container">
+      <div class="top-circles"></div>
+      <div class="top-character"></div>
+      <div class="bottom-character"></div>
+      <div class="corner-character"></div>
+      <div class="bottom-right-character"></div>
+      <div class="middle-right-character"></div>
+      <div class="right-circles"></div>
+      <div class="top-ten"></div>
+      <div id="pricing-table" class="clear">
+        <div class="plan">
+          <h3>Jugador</h3>
+          <ul id="names">
+          </ul> 
+        </div>
+        <div class="plan" id="most-popular">
+          <h3><br>Top 10</h3>
+          <ul>
+            <li>1 ro</li>
+            <li>2 do</li>
+            <li>3 ro</li>
+            <li>4 to</li>
+            <li>5 to</li>
+            <li>6 to</li>
+            <li>7 mo</li>
+            <li>8 vo</li>
+            <li>9 no</li>
+            <li>10 mo</li>
+          </ul>    
+        </div>
+        <div class="plan">
+          <h3>Record</h3>
+          <ul id="points">
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    window.addEventListener('scroll', () => {
+      let parent = document.getElementById('main-container');
+      let children = parent.getElementsByTagName('div');
+      for (let i = 0; i < children.length; i++) {
+        if (i < 8) {
+          children[i].style.transform = 'translateY(-' + (window.pageYOffset * i * 1.25 / children.length) + 'px)';
+        } else {
+          children[i].style.transform = 'translateY(-' + (window.pageYOffset * i * 0.15 / children.length) + 'px)';
+        }
+      }
+    }, false)
+  </script>
+  <script>
+    axios.get('http://promogoldenfoods.com.mx/api/scores')
+    .then(function (response) {
+      let names = document.getElementById("names");
+      let points = document.getElementById("points");
+      // console.log(response.data);
+      for (let index of response.data) {
+        let nodeName = document.createElement("li");
+        let nodePoints = document.createElement("li");
+        let textnodeName = document.createTextNode(index.username);
+        let textnodePoints = document.createTextNode(index.points + ' pts');
+        nodeName.appendChild(textnodeName);
+        nodePoints.appendChild(textnodePoints);
+        names.appendChild(nodeName);
+        points.appendChild(nodePoints);
+        console.log(index)
+      }
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+    .finally(function () {
+    });
+  </script>
+</html>
