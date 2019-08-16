@@ -162,14 +162,14 @@
         -moz-border-radius: 5px 0 0 5px;
         -webkit-border-radius: 5px 0 0 5px;
         border-radius: 5px 0 0 5px;
-        height: 450px;   
+        height: 500px;   
       }
 
       #pricing-table .plan:nth-child(3) {
         -moz-border-radius: 5px 0 0 5px;
         -webkit-border-radius: 5px 0 0 5px;
         border-radius: 5px 0 0 5px;
-        height: 450px;   
+        height: 500px;   
       }
 
       #pricing-table h3 {
@@ -285,19 +285,14 @@
     }, false)
   </script>
   <script>
-    const Http = new XMLHttpRequest();
-    const url='https://promogoldenfoods.com.mx/api/scores';
-    Http.open("GET", url);
-    Http.send();
-    Http.onreadystatechange = (e) => {
-      console.log(Http.responseText)
-    }
-    /*
-    axios.get('http://promogoldenfoods.com.mx/api/scores')
-    .then(function (response) {
+    fetch('https://promogoldenfoods.com.mx/api/scores')
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
       let names = document.getElementById("names");
       let points = document.getElementById("points");
-      for (let index of response.data) {
+      for (let index of data) {
         let nodeName = document.createElement("li");
         let nodePoints = document.createElement("li");
         let textnodeName = document.createTextNode(index.username);
@@ -307,12 +302,6 @@
         names.appendChild(nodeName);
         points.appendChild(nodePoints);
       }
-    })
-    .catch(function (error) {
-      console.log(error);
-    })
-    .finally(function () {
     });
-    */
   </script>
 </html>
