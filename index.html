@@ -271,7 +271,6 @@
       </div>
     </div>
   </body>
-  <script src="./axios.min.js"></script>
   <script>
     window.addEventListener('scroll', () => {
       let parent = document.getElementById('main-container');
@@ -286,11 +285,18 @@
     }, false)
   </script>
   <script>
+    const Http = new XMLHttpRequest();
+    const url='http://promogoldenfoods.com.mx/api/scores';
+    Http.open("GET", url);
+    Http.send();
+    Http.onreadystatechange = (e) => {
+      console.log(Http.responseText)
+    }
+    /*
     axios.get('http://promogoldenfoods.com.mx/api/scores')
     .then(function (response) {
       let names = document.getElementById("names");
       let points = document.getElementById("points");
-      // console.log(response.data);
       for (let index of response.data) {
         let nodeName = document.createElement("li");
         let nodePoints = document.createElement("li");
@@ -300,7 +306,6 @@
         nodePoints.appendChild(textnodePoints);
         names.appendChild(nodeName);
         points.appendChild(nodePoints);
-        console.log(index)
       }
     })
     .catch(function (error) {
@@ -308,5 +313,6 @@
     })
     .finally(function () {
     });
+    */
   </script>
 </html>
